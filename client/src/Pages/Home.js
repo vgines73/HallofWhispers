@@ -164,7 +164,7 @@ const Home = () => {
   return (
     <div className="page-container">
       <Wrapper>
-        <Container>
+        <div className="container container-container">
           <Row>
             <Col size="md-6">
               <h5>
@@ -278,7 +278,7 @@ const Home = () => {
               <Dice onRoll={(value) => console.log(value)} size={50} />
             </Col>
           </Row>
-        </Container>
+        </div>
       </Wrapper>
     </div>
   );
