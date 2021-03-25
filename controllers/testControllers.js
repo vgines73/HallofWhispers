@@ -24,15 +24,12 @@ module.exports = {
     // const userName = req.account;
     try {
       const newPost = new Post({
-        // name: req.body.name,
-        message: req.body.message,
-        // date: req.body.date,
+        message: req.body.message, 
         account: req.account,
-        // accountName: userName.accountName,
       });
-      // console.log(req.account.accountName)
-      // console.log(userName.accountName);
+      // saves the post
       let post = await newPost.save();
+      // need to populate to get the value from the account schema
       let post2 = await post
         .populate("account", "accountName -_id")
         .execPopulate();
@@ -43,7 +40,7 @@ module.exports = {
         date: post2.date,
         myAccount: "true",
       };
-      console.log("post", post2);
+      // console.log("post", post2);
       res.json(post2);
     } catch (error) {
       console.log("error with createPost:", error);

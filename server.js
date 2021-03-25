@@ -17,7 +17,7 @@ const io = socketIO(server);
 
 // runs when client connects
 io.on("connection", (socket) => {
-  console.log("new user connected");
+  // console.log("new user connected");
   // title of the chat app
   //socket.emit only seen by user
   socket.emit("new", {
@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
   });
   // listen for newMessage
   socket.on("newMessage", (data, callback) => {
-    console.log(data);
+    // console.log(data);
     //io.emit informs all users
     io.emit("message", {
       message: data.message,
@@ -43,9 +43,9 @@ io.on("connection", (socket) => {
   });
   // runs when client disconnects
   socket.on("disconnect", () => {
-    // console.log("user disconnected");
+    console.log("user disconnected");
     // io.emit informs all users
-    io.emit("message", "User has left the chat.")
+    // io.emit("message", "User has left the chat.")
   });
 });
 

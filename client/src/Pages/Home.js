@@ -23,6 +23,7 @@ const Home = () => {
   const [postMessage, setPostMessage] = useState("");
   // Setting inital state for chat messages
   const [welcome, setWelcome] = useState("");
+  const [newUser, setNewUser] = useState("")
   const [messages, setMessages] = useState("");
   const [arr, setArr] = useState([]);
   const [id, setId] = useState("");
@@ -49,9 +50,9 @@ const Home = () => {
       .then((res) => {
         // console.log(res);
         const data = res.data;
-        const arr = [...posts]
-        arr.unshift(data)
-        setPosts(arr)
+        const arr = [...posts];
+        arr.unshift(data);
+        setPosts(arr);
       });
     // clears the input field after submitting
     setPostMessage("");
@@ -73,6 +74,7 @@ const Home = () => {
       });
   }
 
+  // FOR LIVE CHATTING
   // connects messages
   useEffect(() => {
     const socket = socketIOClient("http://localhost:5000", {
@@ -89,7 +91,7 @@ const Home = () => {
       setWelcome(data.message);
     });
     socket.on("newUser", (data) => {
-      // console.log(data);
+      // console.log(data.message);
     });
     socket.on("disconnect", () => {
       console.log("disconnected homie");
@@ -126,9 +128,12 @@ const Home = () => {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "auto", block: "end", inline: "nearest"});
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "auto",
+      block: "end",
+      inline: "nearest",
+    });
     // console.log(messagesEndRef)
-    
   };
 
   useEffect(() => {
@@ -202,7 +207,6 @@ const Home = () => {
               </Row>
               <Row>
                 <Card>
-
                   <PostList>
                     {posts.map((post, index) => {
                       return (
@@ -234,6 +238,7 @@ const Home = () => {
                     {/* {console.log(arr)} */}
                     {arr.map((chat, index) => (
                       <div key={index}>
+                        <p>{chat.newUser}</p>
                         <p>{chat.message}</p>
                         <p style={{ float: "right" }} className="timestamp">
                           {" "}
