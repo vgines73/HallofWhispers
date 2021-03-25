@@ -34,34 +34,34 @@ module.exports = {
     }
   },
   // get both post and account schema by using populate then sort to recent
-  getPostWithAccount: async (req, res) => {
-    Post.find({})
-      .populate("account", "accountName")
-      .sort({ date: -1 })
-      .exec((err, posts) => {
-        if (err) return res.status(404).json([]);
-        //console.log(posts)
-        const arr = posts.map((item) => {
-          if (item.account._id == req.account) {
-            return {
-              _id: item._id,
-              message: item.message,
-              date: item.date,
-              account: item.account.accountName,
-              myAccount: "true",
-            };
-          } else {
-            return {
-              _id: item._id,
-              message: item.message,
-              date: item.date,
-              account: item.account.accountName,
-              myAccount: "false",
-            };
-          }
-        });
-        // console.log(arr)
-        res.json(arr);
-      });
-  },
+  // getPostWithAccount: async (req, res) => {
+  //   Post.find({})
+  //     .populate("account", "accountName")
+  //     .sort({ date: -1 })
+  //     .exec((err, posts) => {
+  //       if (err) return res.status(404).json([]);
+  //       //console.log(posts)
+  //       const arr = posts.map((item) => {
+  //         if (item.account._id == req.account) {
+  //           return {
+  //             _id: item._id,
+  //             message: item.message,
+  //             date: item.date,
+  //             account: item.account.accountName,
+  //             myAccount: "true",
+  //           };
+  //         } else {
+  //           return {
+  //             _id: item._id,
+  //             message: item.message,
+  //             date: item.date,
+  //             account: item.account.accountName,
+  //             myAccount: "false",
+  //           };
+  //         }
+  //       });
+  //       // console.log(arr)
+  //       res.json(arr);
+  //     });
+  // },
 };
