@@ -12,7 +12,7 @@ const Nav = ({ children }) => {
     <nav className="navbar navbar-expand-lg navbar-light background">
       {/* <div className="container-fluid background"> */}
         <img className="nav-logo" src="https://i.imgur.com/BGhAyqD.png" alt="logo"></img>
-        <a className="navbar-brand brand-box-model kerning-ligature" href="/">
+        <a className="navbar-brand brand-box-model kerning-ligature medieval" href="/">
           <span className="letter-big">H</span>all of <span className="letter-big">W</span>hispers
         </a>
         <button

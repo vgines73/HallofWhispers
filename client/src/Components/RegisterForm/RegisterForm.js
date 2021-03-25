@@ -21,7 +21,7 @@ const RegisterForm = (props) => {
     try {
       const newUser = await axios.post("/api/register", form);
       console.log(newUser);
-      history.push("/login");
+      history.push("/");
     } catch (error) {
 
       console.log(error.response.data.msg);

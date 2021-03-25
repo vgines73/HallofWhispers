@@ -8,7 +8,13 @@ export function PostList({ children }) {
   return <ul className="list-group">{children}</ul>;
 }
 
-export function PostListItem({ message, date, myAccount, account }) {
+export function PostListItem({
+  message,
+  date,
+  myAccount,
+  chrName,
+  accountId,
+}) {
   const messagesEndRef = useRef(null);
 
   const scrollToTop = () => {
@@ -35,7 +41,7 @@ export function PostListItem({ message, date, myAccount, account }) {
           <div ref={messagesEndRef}>
             <div style={{ float: "right" }}>
               <p className="timestamp">
-                {account} Posted: {moment.utc(date).local().format("LLL")}
+                {chrName} Posted: {moment.utc(date).local().format("LLL")}
                 {/* {console.log(accountName)} */}
               </p>
             </div>

@@ -21,9 +21,9 @@ module.exports = {
   },
   // make a post
   createPost: async (req, res) => {
-    // const userName = req.account;
     try {
       const newPost = new Post({
+<<<<<<< HEAD
         message: req.body.message, 
         account: req.account,
       });
@@ -42,6 +42,14 @@ module.exports = {
       };
       // console.log("post", post2);
       res.json(post2);
+=======
+        message: req.body.message,
+        // date: req.body.date,
+        accountId: req.account,
+        chrName: req.body.chrName
+      });
+      res.json(await newPost.save());
+>>>>>>> b78434209189e8bd9db34454f39710fb9a222f92
     } catch (error) {
       console.log("error with createPost:", error);
     }
