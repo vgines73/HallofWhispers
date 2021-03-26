@@ -134,16 +134,21 @@ const Home = () => {
       behavior: "auto",
       block: "end",
       inline: "nearest",
+      
     });
     // console.log(messagesEndRef)
   };
 
+  // useEffect(() => {
+  //   scrollToBottom();
+  //   if (!userData.pending && !userData.account) history.push("/login");
+  //   //if (!userData.account?.charCreated) history.push("/character");
+  //   //checkLoggedIn();
+  // }, [userData.pending, userData.account, history]);
+
   useEffect(() => {
-    scrollToBottom();
-    if (!userData.pending && !userData.account) history.push("/login");
-    //if (!userData.account?.charCreated) history.push("/character");
-    //checkLoggedIn();
-  }, [userData.pending, userData.account, history]);
+    scrollToBottom()
+  }, [])
 
   //--------------------------------------------
   //Activate this block of code when appropriate

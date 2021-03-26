@@ -10,7 +10,7 @@ module.exports = {
     // res.send({msg: "success from getPosts"})
     try {
       const allPosts = await Post.find().sort({
-        date: -1,
+        date: 1,
       });
       // console.log(allPosts);
       res.json(allPosts);

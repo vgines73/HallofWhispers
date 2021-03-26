@@ -17,17 +17,17 @@ export function PostListItem({
 }) {
   const messagesEndRef = useRef(null);
 
-  const scrollToTop = () => {
-    messagesEndRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "start",
-    });
-  };
+  // const scrollToTop = () => {
+  //   messagesEndRef.current?.scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //     inline: "start",
+  //   });
+  // };
 
-  useEffect(() => {
-    scrollToTop();
-  });
+  // useEffect(() => {
+  //   scrollToTop();
+  // });
 
   return (
     <li
