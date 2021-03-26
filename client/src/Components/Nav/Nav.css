@@ -3,8 +3,6 @@
   src: local("../../assets/fonts/AlmendraDisplay/AlmendraDisplay-Regular.ttf") format("ttf");
 }
 
-/* @import url("../../assets/fonts/MedievalSharp/MedievalSharp-Regular.woff2"); */
-
 .background {
   background-color: #bdc3c7;
   /* background: url("../assets/images/dark_wall.png"); */

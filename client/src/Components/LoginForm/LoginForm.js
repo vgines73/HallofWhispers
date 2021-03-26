@@ -98,7 +98,7 @@ const LoginForm = (props) => {
                 </div>
                 {/* button end */}
 
-                <a onClick={props.toggleForm} className="d-flex justify-content-center mt-3">
+                <a onClick={props.toggleForm} className="d-flex justify-content-center mt-3 cursor">
                     {props.formMode === "login" ? "Sign up here" : "Login here"}
                 </a>
             </form >

@@ -10,12 +10,12 @@ const StatCard = (prop) => {
 
   return (
     <div>
-      <div className="card card-border" style={{ backgroundColor: "transparent", textShadow: "4px 4px 8px grey" }}>
+      <h4 className="card-title text-black">Power Stats</h4>
+
+      <div className="card-deck">
+      <div className="card card-border" style={{ backgroundColor: "transparent"}}>
         <div className="card-body">
-          <h5 className="card-title text-white">Power Stats</h5>
-          <h6 className="card-subtitle mb-2 text-white">
-            Dunno what to put here
-          </h6>
+          
           <Row className="row">
             <Col size="md-4 s-4 xs-4">
               <PowerStats title="Strength" number={userData.character?.chrStats && userData.character?.chrStats[0].value} />
@@ -42,6 +42,7 @@ const StatCard = (prop) => {
             </Col>
           </Row>
         </div>
+      </div>
       </div>
     </div>
   );

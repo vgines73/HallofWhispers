@@ -78,6 +78,10 @@
   margin-top: 8px;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 /* below for show password checkbox */
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #c0392b !important;
